@@ -1,0 +1,7 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=n != 0\n"
+"Language: fr\n"
+
+msgid "general:welcome"
+msgstr "Bienvenue, ${args[0]} !"

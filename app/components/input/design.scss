@@ -1,0 +1,32 @@
+[component=Input] {
+  position: relative;
+  width: 100%;
+
+  .hover-icons {
+    font-size: 1em;
+    user-select: none;
+    position: absolute;
+    right: .6em;
+    top: calc(50% - .7em);
+
+    > * {
+      display: none;
+      width: 1.2em;
+      height: 1.2em;
+      border-radius: 3px;
+
+      &:hover {
+        background: rgba(127,127,127,.2);
+      }
+
+      &.show {
+        display: inline-block;
+      }
+    }
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
