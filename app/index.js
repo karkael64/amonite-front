@@ -1,9 +1,10 @@
-import LoginSection from "./sections/login";
-import OrganizationSection from "./sections/organization";
+import Action from "./components/action";
 
-let login = new LoginSection({});
-let orga = new OrganizationSection({});
-
-window.addEventListener("load", function() {
-  login.setSection();
+window.addEventListener("load", function(){
+  let a = new Action("Test", function(ev, btn) {
+    setTimeout(function() {
+      btn.rearm();
+    }, 1000);
+  });
+  a.setContainer(document.body);
 });

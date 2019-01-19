@@ -28,6 +28,8 @@
     "gulp-iconfont-css": "^2.3.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifycss": "^1.1.0",
     "po2json": "^1.0.0-alpha",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"

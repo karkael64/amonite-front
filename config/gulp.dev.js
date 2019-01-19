@@ -2,6 +2,12 @@ const { src, series, dest, watch, parallel } = require('gulp');
 
 const { icons, reloadIcons } = require('./gulp/icon');
 const { sass, reloadSass } = require('./gulp/sass');
+const css = series(icons, sass);
+
+const { translate, reloadTranslate, translateClean } = require("./gulp/translate");
+const { babel, reloadBabel } = require("./gulp/babel");
+const js = series(translate, babel, translateClean);
+const reloadJs = parallel(reloadTranslate, reloadBabel);
 
 const { html } = require('./gulp/html');
 
@@ -11,8 +17,6 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var Express = require('express');
 
-const { js, reloadJs } = require('./gulp/js.js');
-const css = series(icons, sass);
 
 function copyStatic () {
   src(['./app/**/*.png', './app/**/*.jpg', './app/**/*.jpeg'])
@@ -50,3 +54,4 @@ exports.server = server;
 exports.reload = reload;
 exports.dev = series(build, server, reload);
 exports.js = js;
+exports.css = css;

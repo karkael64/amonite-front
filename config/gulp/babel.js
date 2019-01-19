@@ -5,7 +5,6 @@ const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 const sourcemaps = require('gulp-sourcemaps');
 const connect = require('gulp-connect');
-const es = require("event-stream");
 const babelify = require("./babelify");
 
 function babel () {
@@ -20,9 +19,9 @@ function babel () {
     .pipe(connect.reload());
 }
 
-const js = require('./js');
+const { js } = require('../gulp.dev');
 function reloadBabel(then) {
-  watch(['./app/**/*.js','./app/**/*.json','./app/**/*.html'], js.js);
+  watch(['./app/**/*.js','./app/**/*.json','./app/**/*.html'], js);
   then();
 }
 

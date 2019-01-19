@@ -23,14 +23,8 @@ route.all("*", function(req, res, next) {
 
 route.get("/user", function(req, res){
   setTimeout(function(){
-    res.json(getConfig("./v1/user/index.json"));
+    res.json(getConfig("./v1/users/user.json"));
   }, delay);
-});
-
-route.get("/organization/details", function(req, res){
-  setTimeout(function(){
-    res.json(getConfig("./v1/organization/details.json"));
-  }, shortDelay);
 });
 
 

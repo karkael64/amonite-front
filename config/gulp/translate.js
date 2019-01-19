@@ -38,9 +38,9 @@ function translateClean () {
     .pipe(clean());
 }
 
-const js = require('./js');
+const { js } = require('../gulp.dev');
 function reloadTranslate(then) {
-  watch('./i18n/*.po', js.js);
+  watch('./i18n/*.po', js);
   then();
 }
 
